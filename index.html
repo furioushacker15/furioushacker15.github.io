@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .pic {
+        border: 3px solid yellow;
+        width: 200px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .info {
+        border: 3px solid orange;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+      }
+      #Friend_One {
+        border: 3px solid red;
+
+        display: flex;
+      }
+      #Friend_Two {
+        border: 3px solid blue;
+        display: flex;
+      }
+      #Friends {
+        border: 3px solid purple;
+      }
+      #outer_box {
+        border: 3px solid black;
+      }
+      .botton-pic {
+        border: 3px solid pink;
+      }
+      .pic_wrapper {
+        width: 100%;
+        height: 100%;
+        border: 3px solid black;
+      }
+      .info_wrapper {
+        width: 100%;
+        height: 100%;
+        border: 3px solid black;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="outer_box">
+      <!-- title box  -->
+      <div id="Friends">Friends!</div>
+      <!-- first friend -->
+      <div id="Friend_One" style="background-color: blue">
+        <div class="pic">
+          <div class="pic_wrapper">pic</div>
+          <div class="botton-pic">botton</div>
+        </div>
+        <div class="info">
+          <div class="info_wrapper">info</div>
+          <div class="botton-pic">
+            <input type="color" name="color" id="Friend_one_color" />
+          </div>
+        </div>
+      </div>
+      <!-- second friend -->
+      <div id="Friend_Two" style="background-color: red">
+        <div class="pic">
+          <div class="pic_wrapper">pic</div>
+          <div class="botton-pic">botton</div>
+        </div>
+        <div class="info">
+          <div class="info_wrapper">info</div>
+          <div class="botton-pic">
+            <label for="Friend_two_color">choose a color</label>
+            <input type="color" name="color" id="Friend_two_color" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const friendOneColor = document.getElementById("Friend_one_color");
+      friendOneColor.addEventListener("change", changeColor);
+      async function changeColor(event) {
+        var friendOne = document.getElementById("Friend_One");
+        var color = event.target.value;
+
+        friendOne.style.backgroundColor = color;
+      }
+    </script>
+    <script>
+      var FriendTwoColor = document.getElementById("Friend_two_color");
+      FriendTwoColor.addEventListener("change", changeColor);
+      async function changeColor(event) {
+        var friendtwo = document.getElementById("Friend_Two");
+        var color = event.target.value;
+
+        friendtwo.style.backgroundColor = color;
+      }
+    </script>
+  </body>
+</html>
